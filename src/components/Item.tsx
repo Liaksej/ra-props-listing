@@ -32,14 +32,14 @@ export const Item = ({
               : title.substring(0, 51) + "..."}
           </p>
           <p className="item-price">
-            {(Boolean(currency_code === "USD") && `$${price}`) ||
-              (Boolean(currency_code === "EUR") && `€${price}`) ||
+            {(currency_code === "USD" && `$${price}`) ||
+              (currency_code === "EUR" && `€${price}`) ||
               `${price} ${currency_code}`}
           </p>
           <p
             className={`item-quantity level-${
-              (Boolean(quantity <= 10) && "low") ||
-              (Boolean(quantity <= 20) && "medium") ||
+              (quantity <= 10 && "low") ||
+              (quantity <= 20 && "medium") ||
               "high"
             }`}
           >
